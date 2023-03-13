@@ -4,7 +4,7 @@
 #include <TObjArray.h>
 #include <TBranch.h>
 
-void FindBranches()
+void findAllBranches()
 {
     // Open the ROOT file
     TFile* file = new TFile("out.root");
