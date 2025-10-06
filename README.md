@@ -1,22 +1,30 @@
-# rootCern
+# ROOT Utilities for ROOT Files
 
-### This repository contains some general root scripts.
+This repository provides general-purpose ROOT scripts for analyzing `.root` files in high-energy physics (HEP) workflows.
 
-- `findBranches.cc` This is to find branch names in a root file. 
-- `findDataType.cc` This is to find branch names and their data types in a root file. 
-- `findFinalStateParticles.cc` This is to find branch names in a root file. 
-- `findTreeName.cc` This is to find tree name in a root file. 
-- `loopEvents.cc` This is to loop over all events in a root file. 
-- `plotBranchHistogram.cc` This is to plot histogram of a branch. 
-- `plotMultipleBranchesHistogram.cc` This is to plot histogram of two branches. 
+## Script Overview
 
+| Script                             | Description                                      |
+|------------------------------------|--------------------------------------------------|
+| `findBranches.cc`                  | Lists all branch names in a ROOT file            |
+| `findDataType.cc`                  | Lists branch names along with data types         |
+| `findFinalStateParticles.cc`       | Finds branches representing final state particles|
+| `findTreeName.cc`                  | Extracts the TTree name from a ROOT file         |
+| `loopEvents.cc`                    | Loops over all events in a TTree                 |
+| `plotBranchHistogram.cc`          | Plots histogram of a single branch               |
+| `plotMultipleBranchesHistogram.cc`| Plots histogram using two branches               |
+| `findLeavesAndBranches.C`         | Prints all leaves and their paths                |
+| `printBranchValues.C`             | Prints values from selected branches             |
+| `ListRootFile.C`                  | Lists contents of a ROOT file                    |
 
-### To run these files, use:
+## How to Run
+
 ```bash
-root -l -b -q filename.cc
+root -l -b -q scriptname.cc
 ```
 
-### To install root and other scripts, use:
+## ROOT + DUNE Environment Setup
+
 ```bash
 export LANGUAGE=en_US.UTF-8 
 export LC_ALL=en_US.UTF-8 
@@ -30,7 +38,12 @@ setup_fnal_security
 setup ifdhc 
 setup jobsub_client 
 setup pycurl 
-setup cmake	v3_24_0 
+setup cmake v3_24_0 
 setup gcc v9_3_0 
 setup root v6_22_08d -q e20:p392:prof
 ```
+
+## 📝 Notes
+
+- These scripts are modular and can be adapted for different `.root` structures
+- ROOT version compatibility: Tested on v6.22.08
